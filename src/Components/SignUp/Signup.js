@@ -4,7 +4,7 @@ import { InfoContext } from '../AuthContext/AuthContext';
 
 
 const Signup = () => {
-    const { createUser } = useContext(InfoContext)
+    const { createUser, updateProfileInfo } = useContext(InfoContext)
 
     const handleSignup = event => {
 
@@ -22,6 +22,15 @@ const Signup = () => {
 
                 const user = result.user;
                 console.log(user)
+                form.reset()
+
+                updateProfileInfo(name, url)
+                    .then(() => { })
+                    .catch(error => {
+                        console.log(error)
+
+
+                    })
 
 
 
