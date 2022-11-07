@@ -1,8 +1,22 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import toast from "react-hot-toast";
 import { NavLink } from "react-router-dom";
+import { InfoContext } from "../AuthContext/AuthContext";
 
 export const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+
+    const { user, logOut } = useContext(InfoContext)
+
+    const SignOut = () => {
+
+
+        logOut()
+            .then(toast.success('Log Out'))
+
+
+    }
 
     return (
         <div className="bg-gray-900">
@@ -12,7 +26,7 @@ export const Header = () => {
                         <NavLink
                             to="/"
                             aria-label="company"
-                            title="Jibon"
+                            title="Tourist Service"
                             className="inline-flex items-center mr-8"
                         >
                             <svg
@@ -31,7 +45,7 @@ export const Header = () => {
                                 <rect x="14" y="11" width="7" height="12" />
                             </svg>
                             <span className="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
-                                Jibon
+                                Memorable Journeys
                             </span>
                         </NavLink>
                         <ul className="flex items-center hidden space-x-8 lg:flex">
@@ -42,30 +56,46 @@ export const Header = () => {
                                     title="Our product"
                                     className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
                                 >
-                                    Product
+                                    Home
                                 </NavLink>
                             </li>
-                            <li>
+                            {
+
+                                user && user?.uid && <>
+                                
+                                
+                                <li>
                                 <NavLink
-                                    to="/"
+                                    to="/review"
                                     aria-label="Our product"
                                     title="Our product"
                                     className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
                                 >
-                                    Features
+                                    My review
                                 </NavLink>
                             </li>
                             <li>
                                 <NavLink
-                                    to="/"
+                                    to="/addservice"
                                     aria-label="Product pricing"
                                     title="Product pricing"
                                     className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
                                 >
-                                    Pricing
+                                    Add service
                                 </NavLink>
                             </li>
-                            <li>
+                                
+                                </>
+
+
+                                
+
+
+
+
+                            }
+
+                            {/* <li>
                                 <NavLink
                                     to="/"
                                     aria-label="About us"
@@ -74,30 +104,39 @@ export const Header = () => {
                                 >
                                     About us
                                 </NavLink>
-                            </li>
+                            </li> */}
                         </ul>
                     </div>
                     <ul className="flex items-center hidden space-x-8 lg:flex">
-                        <li>
-                            <NavLink
-                                to="/login"
-                                aria-label="Sign in"
-                                title="Sign in"
-                                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-                            >
-                                Sign in
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink
-                                to="/signup"
-                                className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                                aria-label="Sign up"
-                                title="Sign up"
-                            >
-                                Sign up
-                            </NavLink>
-                        </li>
+                        {user && user?.uid ? <button onClick={SignOut} className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none">LogOut</button>
+                            :
+
+                            <>
+
+                                <li>
+                                    <NavLink
+                                        to="/login"
+                                        aria-label="Sign in"
+                                        title="Sign in"
+                                        className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                                    >
+                                        Sign in
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink
+                                        to="/register"
+                                        className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                                        aria-label="Sign up"
+                                        title="Sign up"
+                                    >
+                                        Sign up
+                                    </NavLink>
+                                </li>
+                            </>
+
+
+                        }
                     </ul>
                     <div className="lg:hidden">
                         <button
