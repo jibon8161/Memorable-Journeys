@@ -6,6 +6,7 @@ import Main from "../Components/Layout/Main";
 import Login from "../Components/Login/Login";
 import Review from "../Components/review/Review";
 import Signup from "../Components/SignUp/Signup";
+import ViewDetails from "../Components/ViewDetails/ViewDetails";
 
 export const router = createBrowserRouter([
 
@@ -53,6 +54,13 @@ export const router = createBrowserRouter([
                 element: <AllServices></AllServices>,
                 loader: async () => fetch('http://localhost:5000/seemoreservices')
 
+
+            },
+            {
+
+                path: '/details/:id',
+                element: <ViewDetails></ViewDetails>,
+                loader: async ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
 
             },
 
