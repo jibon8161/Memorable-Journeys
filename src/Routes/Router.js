@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import AddService from "../Components/AddService/AddService";
+import AllServices from "../Components/Allservices-SeeAll/AllServices";
 import Home from "../Components/Home/Home";
 import Main from "../Components/Layout/Main";
 import Login from "../Components/Login/Login";
@@ -44,6 +45,14 @@ export const router = createBrowserRouter([
 
                 path: '/addservice',
                 element: <AddService></AddService>
+
+            },
+            {
+
+                path: '/seeall',
+                element: <AllServices></AllServices>,
+                loader: async () => fetch('http://localhost:5000/seemoreservices')
+
 
             },
 

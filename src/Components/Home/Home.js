@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import { InfoContext } from '../AuthContext/AuthContext';
 import ThreeService from '../ThreeService/ThreeService';
 
@@ -8,6 +8,18 @@ const Home = () => {
     const { user } = useContext(InfoContext)
 
     const alldata = useLoaderData()
+    const navigate = useNavigate()
+
+
+    const btnSeeAll = () => {
+
+        navigate('/seeall')
+
+
+
+
+    }
+
 
     return (
         <div>
@@ -44,6 +56,13 @@ const Home = () => {
                 </div>
             </div>
 
+            <div className="divider"></div>
+            <div className='mt-6 text-5xl font-medium underline '>
+                <h1>Our Service<span className='text-orange-600'>s</span></h1>
+
+            </div>
+
+
             <div className='container lg:grid grid-cols-3 mt-5 '>
 
                 {
@@ -55,7 +74,9 @@ const Home = () => {
 
             </div>
 
-            <button className="btn btn-warning mt-8 btn-wide">See All</button>
+            <button onClick={btnSeeAll} className="btn btn-warning mt-8 btn-wide">See All</button>
+
+            <div className="divider"></div>
 
 
         </div>

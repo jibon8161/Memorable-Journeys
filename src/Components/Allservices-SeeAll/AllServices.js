@@ -1,0 +1,28 @@
+import React from 'react';
+import { useLoaderData } from 'react-router-dom';
+import AllServiceData from '../AllServiceDataDisplay/AllServiceData';
+
+const AllServices = () => {
+
+    const data = useLoaderData([])
+    console.log(data)
+
+    return (
+        <div>
+            <div className='mt-6 text-5xl  font-medium '>
+                <h1>Our All Service<span className='text-orange-600'>s</span></h1>
+            </div>
+            <div className='lg:grid grid-cols-3 mt-5'>
+
+                {
+
+                    data.map(alldata => <AllServiceData key={alldata._id} alldata={alldata}></AllServiceData>)
+
+                }
+
+            </div>
+        </div>
+    );
+};
+
+export default AllServices;
