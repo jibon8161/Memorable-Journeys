@@ -1,10 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { InfoContext } from '../AuthContext/AuthContext';
 
 
 const Signup = () => {
     const { createUser, updateProfileInfo } = useContext(InfoContext)
+
+    const [error, setError] = useState('')
 
     const handleSignup = event => {
 
@@ -23,6 +26,8 @@ const Signup = () => {
                 const user = result.user;
                 console.log(user)
                 form.reset()
+                setError('')
+                toast.success('User created  successfully')
 
                 updateProfileInfo(name, url)
                     .then(() => { })
@@ -39,6 +44,7 @@ const Signup = () => {
             .catch(err => {
 
                 console.log(err)
+                setError(err.message)
 
 
             })
@@ -83,7 +89,7 @@ const Signup = () => {
 
                                     </label>
                                 </div>
-                                {/* <div className='text-red-600'><p><small>{error}</small></p></div> */}
+                                <div className='text-red-600'><p><small>{error}</small></p></div>
                                 <div className="form-control mt-6">
                                     <button className="btn btn-primary">Register</button>
                                 </div>
