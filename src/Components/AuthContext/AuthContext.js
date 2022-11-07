@@ -1,7 +1,7 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import { app } from '../Firebase/Firebase.config';
 
-import { getAuth, createUserWithEmailAndPassword,updateProfile } from 'firebase/auth'
+import { getAuth, createUserWithEmailAndPassword, updateProfile, onAuthStateChanged } from 'firebase/auth'
 
 
 export const InfoContext = createContext()
@@ -22,7 +22,7 @@ const AuthContext = ({ children }) => {
 
     //update profile info
     const updateProfileInfo = (name, url) => {
-   
+
         return updateProfile(auth.currentUser, {
             displayName: name, photoURL: url
 
@@ -31,11 +31,31 @@ const AuthContext = ({ children }) => {
 
 
 
+    //AuthChange
+
+    useEffect(() => {
+
+        const unSubscribe = onAuthStateChanged(auth, currentUser => {
+
+            setUser(currentUser)
+
+
+
+
+        })
+
+        return () => unSubscribe()
+
+
+    }, [])
+
+
+
 
 
     const contextData = {
 
-        user: 'jibon',
+        user,
         createUser,
         updateProfileInfo
 
