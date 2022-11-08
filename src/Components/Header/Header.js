@@ -62,49 +62,49 @@ export const Header = () => {
                             {
 
                                 user && user?.uid && <>
-                                
-                                
-                                <li>
-                                <NavLink
-                                    to="/review"
-                                    aria-label="Our product"
-                                    title="Our product"
-                                    className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-                                >
-                                    My review
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink
-                                    to="/addservice"
-                                    aria-label="Product pricing"
-                                    title="Product pricing"
-                                    className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-                                >
-                                    Add service
-                                </NavLink>
-                            </li>
-                                
+
+
+                                    <li>
+                                        <NavLink
+                                            to="/review"
+                                            aria-label="Our product"
+                                            title="Our product"
+                                            className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                                        >
+                                            My review
+                                        </NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink
+                                            to="/addservice"
+                                            aria-label="Product pricing"
+                                            title="Product pricing"
+                                            className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                                        >
+                                            Add service
+                                        </NavLink>
+                                    </li>
+
                                 </>
 
 
-                                
+
 
 
 
 
                             }
 
-                            {/* <li>
+                            <li>
                                 <NavLink
-                                    to="/"
+                                    to="/blog"
                                     aria-label="About us"
                                     title="About us"
                                     className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
                                 >
-                                    About us
+                                    Blog
                                 </NavLink>
-                            </li> */}
+                            </li>
                         </ul>
                     </div>
                     <ul className="flex items-center hidden space-x-8 lg:flex">
