@@ -6,7 +6,7 @@ import ReviewsByEmail from '../ReviewsByEmail/ReviewsByEmail';
 const MyReview = () => {
     const [reviewByEmail, setallreviewByEmail] = useState([])
     const { user } = useContext(InfoContext)
-   
+
 
     useEffect(() => {
 
@@ -31,11 +31,16 @@ const MyReview = () => {
     return (
         <div>
 
-            <h1>Your Reviews</h1>
+          <div className='mx-auto lg:mt-[12.5%] lg:mb-[10%] text-5xl font-semibold'>
+          {
+                reviewByEmail.length === 0 && <h1>No reviews were added</h1>
+
+            }
+          </div>
 
             {
 
-                reviewByEmail?.map(allReview => <ReviewsByEmail key={allReview._id} allReview={allReview} reviewByEmail={reviewByEmail}></ReviewsByEmail>)
+                reviewByEmail?.map(allReview => <ReviewsByEmail key={allReview._id} allReview={allReview} reviewByEmail={reviewByEmail} setallreviewByEmail={setallreviewByEmail}></ReviewsByEmail>)
 
             }
 
