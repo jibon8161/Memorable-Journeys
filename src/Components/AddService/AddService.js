@@ -53,11 +53,11 @@ const AddService = () => {
 
     return (
         <div>
-            <h1>Add a service</h1>
+            <h1 className='text-5xl font-bold mt-4 underline'>Add a service</h1>
 
             <div>
                 <div>
-                    <div className="hero min-h-screen bg-base-200 shadow-2xl  shadow-zinc-600 min-w-full">
+                    <div className="hero min-h-screen bg-base-200 shadow-2xl min-w-full">
                         <div className="hero-content flex-col lg:flex-row-reverse">
                             <div className="text-center lg:text-left">
 
@@ -69,25 +69,25 @@ const AddService = () => {
                                         <label className="label">
                                             <span className="label-text">Service Name</span>
                                         </label>
-                                        <input type="text" placeholder="Name" name='name' className="input input-bordered shadow-inner  shadow-zinc-600 hover:bg-orange-200" required />
+                                        <input type="text" placeholder="Name" name='name' className="input input-bordered shadow-inner  shadow-purple-600 hover:bg-purple-200" required />
                                     </div>
                                     <div className="form-control">
                                         <label className="label">
                                             <span className="label-text">photo URL</span>
                                         </label>
-                                        <input type="text" placeholder="photo URL" name='url' className="input input-bordered shadow-inner  shadow-zinc-600 hover:bg-orange-200" required />
+                                        <input type="text" placeholder="photo URL" name='url' className="input input-bordered shadow-inner  shadow-purple-600 hover:bg-purple-200" required />
                                     </div>
                                     <div className="form-control">
                                         <label className="label">
                                             <span className="label-text">Service Price</span>
                                         </label>
-                                        <input type="text" placeholder="Price" name='price' className="input input-bordered shadow-inner  shadow-zinc-600 hover:bg-orange-200" required />
+                                        <input type="text" placeholder="Price" name='price' className="input input-bordered shadow-inner  shadow-purple-600 hover:bg-purple-200" required />
                                     </div>
                                     <div className="form-control">
                                         <label className="label">
                                             <span className="label-text">Details</span>
                                         </label>
-                                        <input type="text" placeholder="Details" name='details' className="input input-bordered shadow-inner  shadow-zinc-600 hover:bg-orange-200" required />
+                                        <input type="text" placeholder="Details" name='details' className="input input-bordered shadow-inner  shadow-purple-600 hover:bg-purple-200" required />
                                         <label className="label">
 
                                         </label>
