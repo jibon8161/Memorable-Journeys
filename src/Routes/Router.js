@@ -7,6 +7,7 @@ import Login from "../Components/Login/Login";
 import Review from "../Components/review/Review";
 import Signup from "../Components/SignUp/Signup";
 import ViewDetails from "../Components/ViewDetails/ViewDetails";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
 

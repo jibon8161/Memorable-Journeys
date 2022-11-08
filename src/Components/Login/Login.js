@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { FaGoogle } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { InfoContext } from '../AuthContext/AuthContext';
 import toast from 'react-hot-toast';
 import { GoogleAuthProvider } from 'firebase/auth';
@@ -11,6 +11,11 @@ const Login = () => {
     const gProvider = new GoogleAuthProvider()
 
     const { signInWithEmail, forgetPass, googleSignIn } = useContext(InfoContext)
+
+
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location?.state?.from?.pathname || '/'
 
 
     const handleLogin = (event) => {
@@ -28,6 +33,7 @@ const Login = () => {
                 toast.success('You are successfully logged in')
                 form.reset()
                 setError('')
+                navigate(from, { state: true })
             })
             .catch(error => {
 
@@ -68,7 +74,8 @@ const Login = () => {
                 const user = result.user;
                 console.log(user)
                 toast.success('You are successfully logged in')
-          
+                navigate(from, { state: true })
+
 
 
 
@@ -88,7 +95,7 @@ const Login = () => {
 
     }
 
-    
+
 
 
 

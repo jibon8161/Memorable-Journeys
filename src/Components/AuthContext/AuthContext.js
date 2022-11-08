@@ -10,10 +10,11 @@ const auth = getAuth(app)
 
 const AuthContext = ({ children }) => {
     const [user, setUser] = useState()
+    const [loader, setLoader] = useState(true)
 
     const createUser = (email, pass) => {
 
-
+        setLoader(true)
         return createUserWithEmailAndPassword(auth, email, pass)
 
 
@@ -22,7 +23,7 @@ const AuthContext = ({ children }) => {
 
     //update profile info
     const updateProfileInfo = (name, url) => {
-
+        setLoader(true)
         return updateProfile(auth.currentUser, {
             displayName: name, photoURL: url
 
@@ -38,6 +39,7 @@ const AuthContext = ({ children }) => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
 
             setUser(currentUser)
+            setLoader(false)
 
 
 
@@ -52,7 +54,7 @@ const AuthContext = ({ children }) => {
 
     //signin With Email
     const signInWithEmail = (email, pass) => {
-
+        setLoader(true)
         return signInWithEmailAndPassword(auth, email, pass)
 
 
@@ -62,7 +64,7 @@ const AuthContext = ({ children }) => {
 
     const forgetPass = email => {
 
-
+        setLoader(true)
         return sendPasswordResetEmail(auth, email)
 
 
@@ -71,7 +73,7 @@ const AuthContext = ({ children }) => {
 
     const googleSignIn = provider => {
 
-
+        setLoader(true)
         return signInWithPopup(auth, provider)
 
 
@@ -82,7 +84,7 @@ const AuthContext = ({ children }) => {
     const logOut = () => {
 
       
-
+        setLoader(true)
         return signOut(auth)
 
 
@@ -100,7 +102,8 @@ const AuthContext = ({ children }) => {
         signInWithEmail,
         forgetPass,
         googleSignIn,
-        logOut
+        logOut,
+        loader
 
 
     }

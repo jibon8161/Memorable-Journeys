@@ -30,7 +30,7 @@ const ViewDetails = () => {
                 </div >
                 <p className='mt-4 mb-5 font-semibold'>{details}</p>
             </div>
-            <div> review</div>
+            <div> review </div>
 
         </div>
     );
