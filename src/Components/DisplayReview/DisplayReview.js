@@ -1,6 +1,7 @@
 import React from 'react';
 
 const DisplayReview = ({ allReview }) => {
+    console.log(allReview)
 
 
     return (
@@ -14,7 +15,7 @@ const DisplayReview = ({ allReview }) => {
                         </div>
                         <div>
                             <h4 className="font-bold">{allReview?.name}</h4>
-                            <span className="text-xs dark:text-gray-400">{allReview?.date}</span>
+                            {/* <span className="text-xs dark:text-gray-400">{allReview?.date}</span> */}
                         </div>
                     </div>
                     <div className="flex items-center space-x-2 dark:text-yellow-500">

@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import { InfoContext } from '../AuthContext/AuthContext';
+import useTitle from '../Hooks/useTitle';
 import ThreeService from '../ThreeService/ThreeService';
 
 const Home = () => {
 
+    useTitle('Home')
     const { user } = useContext(InfoContext)
 
     const alldata = useLoaderData()
@@ -58,12 +60,12 @@ const Home = () => {
 
             <div className="divider"></div>
             <div className='mt-6 text-5xl font-medium underline '>
-                <h1>Service<span className='text-orange-600'>s</span></h1>
+                <h1>My service<span className='text-orange-600'>s</span></h1>
 
             </div>
 
 
-            <div className='container lg:grid grid-cols-3 mt-5 '>
+            <div className='container lg:grid grid-cols-3 mt-5'>
 
                 {
 

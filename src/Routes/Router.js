@@ -50,14 +50,14 @@ export const router = createBrowserRouter([
             {
 
                 path: '/addservice',
-                element: <AddService></AddService>
+                element: <PrivateRoute><AddService></AddService></PrivateRoute>
 
             },
             {
 
                 path: '/update/:id',
                 element: <Update></Update>,
-                loader: async ({params})=> fetch(`http://localhost:5000/update/${params.id}`)
+                loader: async ({ params }) => fetch(`http://localhost:5000/update/${params.id}`)
 
             },
             {

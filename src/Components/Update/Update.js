@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 import { useLoaderData } from 'react-router-dom';
+import useTitle from '../Hooks/useTitle';
 
 const Update = () => {
-const [updateReview,setUpdateReview]= useState()
+
+
+
     const updateData = useLoaderData()
     console.log(updateData)
+
+    useTitle('Update')
 
     const updatebtn = event => {
 
@@ -13,7 +18,7 @@ const [updateReview,setUpdateReview]= useState()
         const form = event.target
         const review = form.review.value;
         const updateReview = {review}
-        setUpdateReview(updateReview)
+    
 
         fetch(`http://localhost:5000/update/${updateData._id}`, {
 

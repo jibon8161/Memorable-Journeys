@@ -8,7 +8,8 @@ const Review = ({ servicedata }) => {
 
     const { user } = useContext(InfoContext)
     const [review, setReview] = useState([])
-    // const [refresh, setreFresh] = useState(false)
+    const [refresh, setreFresh] = useState(true)
+    console.log(servicedata._id)
 
 
     console.log(user)
@@ -29,7 +30,7 @@ const Review = ({ servicedata }) => {
 
 
         const data = { review, email, name, serviceId, image, date, servicename }
-        console.log(data)
+        // console.log(data)
 
 
 
@@ -58,7 +59,7 @@ const Review = ({ servicedata }) => {
 
 
 
-
+        setreFresh(!refresh)
 
     }
 
@@ -66,10 +67,11 @@ const Review = ({ servicedata }) => {
     useEffect(() => {
 
 
-        fetch('http://localhost:5000/review')
+        fetch(`http://localhost:5000/review?serviceId=${servicedata._id}`)
             .then(res => res.json())
             .then(data => {
                 setReview(data)
+
             }
 
 
@@ -78,9 +80,9 @@ const Review = ({ servicedata }) => {
 
 
 
-    }, [])
+    }, [refresh])
 
-    console.log(review)
+    // console.log(review)
 
 
     return (
@@ -107,7 +109,7 @@ const Review = ({ servicedata }) => {
                 {
 
                     user ? <form onSubmit={post} className="card-body">
-                        <textarea className="textarea textarea-warning shadow-2xl shadow-slate-700" placeholder="Add review" name='review' required> </textarea>
+                        <textarea className="textarea textarea-warning shadow-2xl shadow-slate-700" placeholder="Add review" name='review' required></textarea>
                         <button className='btn btn-outline w-32 lg:ml-[600px]' type="submit">Post</button>
                     </form>
                         :

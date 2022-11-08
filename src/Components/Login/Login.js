@@ -4,14 +4,17 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { InfoContext } from '../AuthContext/AuthContext';
 import toast from 'react-hot-toast';
 import { GoogleAuthProvider } from 'firebase/auth';
+import useTitle from '../Hooks/useTitle';
 
 const Login = () => {
+    
     const [error, setError] = useState('')
     const [email, setEmail] = useState()
     const gProvider = new GoogleAuthProvider()
-
+    
     const { signInWithEmail, forgetPass, googleSignIn } = useContext(InfoContext)
-
+    
+    useTitle('login')
 
     const navigate = useNavigate()
     const location = useLocation()
@@ -84,7 +87,7 @@ const Login = () => {
             .catch(error => {
 
 
-                console.log(error)
+                console.log(error)  
 
 
 
@@ -95,7 +98,7 @@ const Login = () => {
 
     }
 
-    
+
 
 
 

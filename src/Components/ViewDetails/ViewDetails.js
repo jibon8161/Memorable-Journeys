@@ -1,8 +1,11 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import useTitle from '../Hooks/useTitle';
 import Review from '../review/Review';
 
 const ViewDetails = () => {
+
+    useTitle('view Details')
     const data = useLoaderData({})
 
     const { urlimg, name, price, details, _id } = data;
