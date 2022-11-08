@@ -88,13 +88,15 @@ const Review = ({ servicedata }) => {
 
             <div>
 
-                <h1>reviews</h1>
+                <h1 className='text-4xl font-semibold text-orange-600'> All reviews from happy Travelers </h1>
 
-                {
+                <div>
+                    {
 
-                    review?.map(allReview => <DisplayReview key={allReview._id} allReview={allReview}></DisplayReview>)
+                        review?.map(allReview => <DisplayReview key={allReview._id} allReview={allReview}></DisplayReview>)
 
-                }
+                    }
+                </div>
 
 
             </div>
@@ -105,8 +107,8 @@ const Review = ({ servicedata }) => {
                 {
 
                     user ? <form onSubmit={post} className="card-body">
-                        <textarea className="textarea textarea-warning" placeholder="Add review" name='review'></textarea>
-                        <button className='btn btn-outline w-32 lg:ml-[450px]' type="submit">Post</button>
+                        <textarea className="textarea textarea-warning shadow-2xl shadow-slate-700" placeholder="Add review" name='review' required> </textarea>
+                        <button className='btn btn-outline w-32 lg:ml-[600px]' type="submit">Post</button>
                     </form>
                         :
                         <p className='text-3xl font-bold'><small>Please login to add a review.<Link to='/login'><button className="btn btn-link btn-xs"><small>Sign in</small></button></Link> </small></p>

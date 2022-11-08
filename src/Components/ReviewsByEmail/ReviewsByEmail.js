@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 
 const ReviewsByEmail = ({ allReview, reviewByEmail, setallreviewByEmail }) => {
 
@@ -49,7 +50,8 @@ const ReviewsByEmail = ({ allReview, reviewByEmail, setallreviewByEmail }) => {
     return (
         <div>
 
-            <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md divide-gray-700 dark:bg-gray-900 dark:text-gray-100">
+            <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md divide-gray-700 dark:bg-gray-900 dark:text-gray-100 shadow-inner shadow-slate-800 mb-8">
+                            <h1 className="font-bold">Service name:{allReview.servicename}</h1>
                 <div className="flex justify-between p-4">
                     <div className="flex space-x-4">
                         <div>
@@ -57,16 +59,15 @@ const ReviewsByEmail = ({ allReview, reviewByEmail, setallreviewByEmail }) => {
                         </div>
                         <div>
                             <h4 className="font-bold">{allReview?.name}</h4>
-                            <h1 className="font-bold">Service name:{allReview.servicename}</h1>
                             <span className="text-xs dark:text-gray-400">{allReview?.date}</span>
                         </div>
                     </div>
                     <div className="flex items-center space-x-2 dark:text-yellow-500">
-                        <button className='btn btn-xs'>update</button>
+                        <Link to={`/update/${allReview._id}`}> <button className='btn btn-xs'>update</button></Link>
                         <button onClick={() => handledel(allReview._id)} className='btn btn-xs btn-warning'>delete</button>
                     </div>
                 </div>
-                <div className="p-4 space-y-2 text-sm dark:text-gray-400">
+                <div className="p-4 space-y-2 text-lg font-bold dark:text-gray-400 ">
                     <p>{allReview.review}</p>
 
                 </div>

@@ -9,6 +9,7 @@ import Login from "../Components/Login/Login";
 import MyReview from "../Components/Myreview/MyReview";
 import Review from "../Components/review/Review";
 import Signup from "../Components/SignUp/Signup";
+import Update from "../Components/Update/Update";
 import ViewDetails from "../Components/ViewDetails/ViewDetails";
 import PrivateRoute from "./PrivateRoute";
 
@@ -50,6 +51,13 @@ export const router = createBrowserRouter([
 
                 path: '/addservice',
                 element: <AddService></AddService>
+
+            },
+            {
+
+                path: '/update/:id',
+                element: <Update></Update>,
+                loader: async ({params})=> fetch(`http://localhost:5000/update/${params.id}`)
 
             },
             {
