@@ -1,10 +1,15 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { InfoContext } from '../AuthContext/AuthContext';
+import DisplayReview from '../DisplayReview/DisplayReview';
 
-const Review = ({ id }) => {
+const Review = ({ servicedata }) => {
 
     const { user } = useContext(InfoContext)
+    const [review, setReview] = useState([])
+    // const [refresh, setreFresh] = useState(false)
+
 
     console.log(user)
 
@@ -15,26 +20,87 @@ const Review = ({ id }) => {
         const review = form.review.value
         const email = user?.email
         const name = user?.displayName;
-        const serviceId = id;
+        const serviceId = servicedata._id;
         const image = user.photoURL
+        const last_updated = new Date();
+        const date = last_updated
+        const servicename = servicedata.name
 
 
-        console.log({ review, email, name, serviceId, image })
+
+        const data = { review, email, name, serviceId, image, date, servicename }
+        console.log(data)
 
 
 
-        
+
+        fetch('http://localhost:5000/review', {
+
+
+            method: 'POST',
+            headers: {
+
+                'content-type': 'application/json'
+
+            },
+            body: JSON.stringify(data)
+
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                toast.success('review is added successfully')
+
+
+            })
+
+
+
+
 
 
 
     }
 
 
+    useEffect(() => {
+
+
+        fetch('http://localhost:5000/review')
+            .then(res => res.json())
+            .then(data => {
+                setReview(data)
+            }
+
+
+            )
+
+
+
+
+    }, [])
+
+    console.log(review)
+
+
     return (
         <div>
-            <div>
-                <h1>{user?.email}</h1>
 
+            <div>
+
+                <h1>reviews</h1>
+
+                {
+
+                    review?.map(allReview => <DisplayReview key={allReview._id} allReview={allReview}></DisplayReview>)
+
+                }
+
+
+            </div>
+
+
+            <div>
 
                 {
 

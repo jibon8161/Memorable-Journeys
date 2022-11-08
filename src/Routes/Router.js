@@ -6,6 +6,7 @@ import Error from "../Components/Error/Error";
 import Home from "../Components/Home/Home";
 import Main from "../Components/Layout/Main";
 import Login from "../Components/Login/Login";
+import MyReview from "../Components/Myreview/MyReview";
 import Review from "../Components/review/Review";
 import Signup from "../Components/SignUp/Signup";
 import ViewDetails from "../Components/ViewDetails/ViewDetails";
@@ -41,8 +42,8 @@ export const router = createBrowserRouter([
             },
             {
 
-                path: '/review',
-                element: <Review></Review>
+                path: '/myreview',
+                element: <PrivateRoute><MyReview></MyReview></PrivateRoute>
 
             },
             {

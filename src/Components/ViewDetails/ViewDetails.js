@@ -36,7 +36,7 @@ const ViewDetails = () => {
 
 
 
-                <Review id={_id}></Review>
+                <Review servicedata={data}></Review>
 
 
 

@@ -66,7 +66,7 @@ export const Header = () => {
 
                                     <li>
                                         <NavLink
-                                            to="/review"
+                                            to="/myreview"
                                             aria-label="Our product"
                                             title="Our product"
                                             className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
@@ -125,7 +125,7 @@ export const Header = () => {
                                 </li>
                                 <li>
                                     <NavLink
-                                        to="/register"
+                                        to="/signup"
                                         className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                                         aria-label="Sign up"
                                         title="Sign up"
