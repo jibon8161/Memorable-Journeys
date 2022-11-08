@@ -10,7 +10,7 @@ const AllServices = () => {
     return (
         <div>
             <div className='mt-6 text-5xl  font-medium '>
-                <h1>Our All Service<span className='text-orange-600'>s</span></h1>
+                <h1> All Services<span className='text-orange-600'>s</span></h1>
             </div>
             <div className='lg:grid grid-cols-3 mt-5'>
 

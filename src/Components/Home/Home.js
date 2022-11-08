@@ -25,30 +25,30 @@ const Home = () => {
         <div>
 
             <h1><span className='text-4xl text-orange-600 font-bold'> Memorable Journeys</span> <br /><span className='text-2xl font-semibold'> a trusted tourist service </span></h1>
-            <div className="carousel w-full mt-2 container mx-auto">
+            <div className="carousel w-full mt-2 container mx-auto h-[500px]">
                 <div id="slide1" className="carousel-item relative w-full">
-                    <img src="https://placeimg.com/800/200/arch" className="w-full" alt='' />
+                    <img src="https://img.freepik.com/premium-photo/natural-scenery-panorama-view-bangladesh-india_709167-42.jpg?size=626&ext=jpg&ga=GA1.2.96050015.1659979182&semt=sph" className="w-full" alt='' />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide4" className="btn btn-circle">❮</a>
                         <a href="#slide2" className="btn btn-circle">❯</a>
                     </div>
                 </div>
                 <div id="slide2" className="carousel-item relative w-full">
-                    <img src="https://placeimg.com/800/200/arch" className="w-full " alt='' />
+                    <img src="https://img.freepik.com/premium-photo/saint-martin-island-drone-photography_203617-3.jpg?size=626&ext=jpg&ga=GA1.2.96050015.1659979182&semt=sph" className="w-full " alt='' />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide1" className="btn btn-circle">❮</a>
                         <a href="#slide3" className="btn btn-circle">❯</a>
                     </div>
                 </div>
                 <div id="slide3" className="carousel-item relative w-full">
-                    <img src="https://placeimg.com/800/200/arch" className="w-full" alt='' />
+                    <img src="https://img.freepik.com/premium-photo/saint-martin-island-drone-photography_203617-8.jpg?size=626&ext=jpg&ga=GA1.2.96050015.1659979182&semt=sph" className="w-full" alt='' />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide2" className="btn btn-circle">❮</a>
                         <a href="#slide4" className="btn btn-circle">❯</a>
                     </div>
                 </div>
                 <div id="slide4" className="carousel-item relative w-full">
-                    <img src="https://placeimg.com/800/200/arch" className="w-full" alt='' />
+                    <img src="http://touristsignal.com/wp-content/uploads/2014/12/29113079754_4bb743f19e_b.jpg" className="w-full" alt='' />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide3" className="btn btn-circle">❮</a>
                         <a href="#slide1" className="btn btn-circle">❯</a>
@@ -58,7 +58,7 @@ const Home = () => {
 
             <div className="divider"></div>
             <div className='mt-6 text-5xl font-medium underline '>
-                <h1>Our Service<span className='text-orange-600'>s</span></h1>
+                <h1>Service<span className='text-orange-600'>s</span></h1>
 
             </div>
 
