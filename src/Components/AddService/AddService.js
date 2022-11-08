@@ -1,29 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
+import toast from 'react-hot-toast';
 
 const AddService = () => {
+
+
+
 
     const handleAddService = event => {
 
         event.preventDefault()
         const form = event.target
         const name = form.name.value
-        const url = form.url.value
+        const urlimg = form.url.value
 
         const details = form.details.value
         const price = form.price.value
-        const data = { name, details, price, url }
-        console.log(data)
-
-
-        fetch('http://localhost:5000/seemoreservices',{
+        const data = { name, details, price, urlimg }
 
 
 
+        fetch('http://localhost:5000/seemoreservices', {
 
 
+            method: 'POST',
+            headers: {
 
-        
+                'content-type': 'application/json'
+
+            },
+            body: JSON.stringify(data)
+
         })
+            .then(res => res.json())
+            .then(data => {
+
+
+                console.log(data)
+                toast.success('service is added successfully')
+
+
+
+
+
+
+            })
 
 
 
