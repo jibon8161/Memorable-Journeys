@@ -24,7 +24,7 @@ const Home = () => {
     return (
         <div>
 
-            <h1><span className='text-4xl text-orange-600 font-bold'> Memorable Journeys</span> <br /><span className='text-2xl font-semibold'> a trusted tourist service </span></h1>
+            <h1><span className='text-4xl text-orange-600 font-bold'> Memorable Journeys</span> <br /><span className='text-2xl font-semibold'> Your personal tour guide </span></h1>
             <div className="carousel w-full mt-2 container mx-auto h-[500px]">
                 <div id="slide1" className="carousel-item relative w-full">
                     <img src="https://img.freepik.com/premium-photo/natural-scenery-panorama-view-bangladesh-india_709167-42.jpg?size=626&ext=jpg&ga=GA1.2.96050015.1659979182&semt=sph" className="w-full" alt='' />
