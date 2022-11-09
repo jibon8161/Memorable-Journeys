@@ -52,6 +52,7 @@ const Review = ({ servicedata }) => {
                 console.log(data)
                 toast.success('review is added successfully')
 
+                setreFresh(!refresh)
 
             })
 
@@ -59,7 +60,6 @@ const Review = ({ servicedata }) => {
 
 
 
-        setreFresh(!refresh)
 
     }
 
