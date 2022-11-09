@@ -20,7 +20,7 @@ const ThreeService = ({ data }) => {
 
     return (
         <div>
-            <div className="max-w-xs rounded-md shadow-md dark:bg-gray-900 dark:text-gray-100 conotainer mx-auto">
+            <div className="max-w-xs rounded-md shadow-2xl shadow-slate-900 dark:bg-gray-900 dark:text-gray-100 conotainer mx-auto">
 
                 <PhotoProvider>
                     <PhotoView src={urlimg}>

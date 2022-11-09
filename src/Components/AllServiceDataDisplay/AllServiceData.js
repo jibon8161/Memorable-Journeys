@@ -19,7 +19,7 @@ const AllServiceData = ({ alldata }) => {
 
     return (
         <div>
-            <div className="max-w-xs rounded-md shadow-md dark:bg-gray-900 dark:text-gray-100 conotainer mx-auto">
+            <div className="max-w-xs rounded-md shadow-2xl shadow-slate-700 dark:bg-gray-900 dark:text-gray-100 conotainer mx-auto mb-4">
                 <PhotoProvider>
                     <PhotoView src={urlimg}>
                         <img src={urlimg} alt="" className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500 " />

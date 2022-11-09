@@ -160,7 +160,7 @@ const Home = () => {
 
                                 </div>
                             </div>
-                            <div className="w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 mb-0">
+                            <div className="w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
                                 <div className="p-6 space-y-6 rounded shadow-2xl bg-orange-200 sm:p-8">
                                     <div className="space-y-2">
                                         <h4 className="text-2xl font-bold">Team</h4>
@@ -216,7 +216,7 @@ const Home = () => {
                     <div className="hero-content text-center">
                         <div className="lg:max-w-full">
                             <h1 className="lg:text-1xl font-bold">About <span className='text-green-800'>me</span></h1>
-                            <h1 className="lg:text-2xl font-bold lg:block hidden">I'M YOUR PERSONAL <span className='text-green-800'>TOUR GUIDE</span></h1>
+                            <h1 className="lg:text-2xl font-bold lg:block hidden">I'M A PERSONAL <span className='text-green-800'>TOUR GUIDE</span></h1>
                             <h1 className="lg:text-5xl font-bold">DISCOVER BANGLADESH <span className='text-green-800'>WITH ME</span></h1>
                             <p className="lg:py-6 lg:text-red-600 lg:font-semibold lg:text-lg text-black lg:uppercase"> I am Energetic professional with 6 years of experience informing and guiding museum visitors. <br /> Superior talent for entertaining audience members and delivering a high level of customer service. <span className='lg:block hidden'>Extensive knowledge of history and visual arts; able to learn, retain, and recall extensive amounts of information quickly</span></p>
 

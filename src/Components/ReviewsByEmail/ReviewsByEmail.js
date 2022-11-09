@@ -63,7 +63,7 @@ const ReviewsByEmail = ({ allReview, reviewByEmail, setallreviewByEmail }) => {
                         </div>
                     </div>
                     <div className="flex items-center space-x-2 dark:text-yellow-500">
-                        <Link to={`/update/${allReview._id}`}> <button className='btn btn-xs'>update</button></Link>
+                        <Link to={`/update/${allReview._id}`}> <button className='btn btn-xs'>edit review</button></Link>
                         <button onClick={() => handledel(allReview._id)} className='btn btn-xs btn-warning'>delete</button>
                     </div>
                 </div>

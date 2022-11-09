@@ -51,11 +51,11 @@ const Update = () => {
 
 
     return (
-        <div>
-            <h1>update your review {updateData.name}</h1>
+        <div className=''>
+            <h1 className='text-3xl font-bold '>update your review <span className='text-orange-600'>{updateData.name}</span></h1>
 
-            <div>
-                <form onSubmit={updatebtn} className="card-body">
+            <div className=''>
+                <form  onSubmit={updatebtn} className="card-body mt-[118px]">
                     <textarea className="textarea textarea-warning shadow-2xl shadow-slate-700 text-center" placeholder="Add review" name='review' defaultValue={updateData.review} required></textarea>
                     <button className='btn btn-outline w-32 lg:ml-[600px]' type="submit">Update</button>
                 </form>

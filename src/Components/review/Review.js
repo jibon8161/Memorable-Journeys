@@ -109,7 +109,7 @@ const Review = ({ servicedata }) => {
                 {
 
                     user ? <form onSubmit={post} className="card-body">
-                        <textarea className="textarea textarea-warning shadow-2xl shadow-slate-700" placeholder="Add review" name='review' required></textarea>
+                        <textarea className="textarea textarea-warning shadow-2xl shadow-slate-700 text-center text-lg" placeholder="Add review" name='review' required></textarea>
                         <button className='btn btn-outline w-32 lg:ml-[600px]' type="submit">Post</button>
                     </form>
                         :
