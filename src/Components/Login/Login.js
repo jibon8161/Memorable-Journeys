@@ -7,13 +7,13 @@ import { GoogleAuthProvider } from 'firebase/auth';
 import useTitle from '../Hooks/useTitle';
 
 const Login = () => {
-    
+
     const [error, setError] = useState('')
     const [email, setEmail] = useState()
     const gProvider = new GoogleAuthProvider()
-    
+
     const { signInWithEmail, forgetPass, googleSignIn } = useContext(InfoContext)
-    
+
     useTitle('login')
 
     const navigate = useNavigate()
@@ -33,10 +33,51 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
-                toast.success('You are successfully logged in')
-                form.reset()
-                setError('')
-                navigate(from, { state: true })
+
+
+                const currentUser = {
+
+                    email: user.email
+
+
+                }
+
+                fetch('http://localhost:5000/jwt', {
+
+
+                    method: "POST",
+                    headers: {
+
+                        'content-type': 'application/json'
+
+                    },
+                    body: JSON.stringify(currentUser)
+
+
+
+                })
+
+                    .then(res => res.json())
+                    .then(data => {
+
+
+                        console.log(data)
+
+                        localStorage.setItem('token', data.token)
+                        toast.success('You are successfully logged in')
+                        form.reset()
+                        setError('')
+
+
+
+                        navigate(from, { state: true })
+
+                    })
+
+
+
+
+
             })
             .catch(error => {
 
@@ -76,8 +117,42 @@ const Login = () => {
 
                 const user = result.user;
                 console.log(user)
-                toast.success('You are successfully logged in')
-                navigate(from, { state: true })
+
+
+                const currentUser = {
+
+                    email: user.email
+
+
+                }
+
+                fetch('http://localhost:5000/jwt', {
+
+
+                    method: "POST",
+                    headers: {
+
+                        'content-type': 'application/json'
+
+                    },
+                    body: JSON.stringify(currentUser)
+
+
+
+                })
+                    .then(res => res.json())
+                    .then(data => {
+
+
+                        console.log(data)
+
+                        localStorage.setItem('token', data.token)
+
+                        toast.success('You are successfully logged in')
+                        navigate(from, { state: true })
+
+
+                    })
 
 
 
@@ -87,7 +162,7 @@ const Login = () => {
             .catch(error => {
 
 
-                console.log(error)  
+                console.log(error)
 
 
 

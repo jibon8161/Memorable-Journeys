@@ -9,15 +9,40 @@ const MyReview = () => {
 
     useTitle('My review')
     const [reviewByEmail, setallreviewByEmail] = useState([])
-    const { user } = useContext(InfoContext)
+    const { user,logOut } = useContext(InfoContext)
 
 
     useEffect(() => {
 
         fetch(`http://localhost:5000/reviewbyemail?email=${user?.email}`, {
 
+
+
+
+            headers: {
+
+                authorization: `Bearer ${localStorage.getItem('token')}`
+
+            }
+
+
+
+
+
+
         })
-            .then(res => res.json())
+            .then(res => {
+
+                if (res.status === 401 || res.status === 403){
+
+                    logOut()
+
+
+                }
+
+                    return res.json()
+
+            })
             .then(data => {
 
 
@@ -35,12 +60,12 @@ const MyReview = () => {
     return (
         <div>
 
-          <div className='mx-auto lg:mt-[12.5%] lg:mb-[10%] text-5xl font-semibold'>
-          {
-                reviewByEmail.length === 0 && <h1>No reviews were added</h1>
+            <div className='mx-auto lg:mt-[12.5%] lg:mb-[10%] text-5xl font-semibold'>
+                {
+                    reviewByEmail.length === 0 && <h1>No reviews were added</h1>
 
-            }
-          </div>
+                }
+            </div>
 
             {
 

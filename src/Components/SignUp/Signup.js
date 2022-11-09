@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { InfoContext } from '../AuthContext/AuthContext';
 import useTitle from '../Hooks/useTitle';
 
@@ -9,6 +9,9 @@ const Signup = () => {
 
     useTitle('register')
     const { createUser, updateProfileInfo } = useContext(InfoContext)
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location?.state?.from?.pathname || '/'
 
     const [error, setError] = useState('')
 
@@ -28,17 +31,58 @@ const Signup = () => {
 
                 const user = result.user;
                 console.log(user)
-                form.reset()
-                setError('')
-                toast.success('User created  successfully')
 
-                updateProfileInfo(name, url)
-                    .then(() => { })
-                    .catch(error => {
-                        console.log(error)
 
+                const currentUser = {
+
+                    email: user.email
+
+
+                }
+
+
+                fetch('http://localhost:5000/jwt', {
+
+
+                    method: "POST",
+                    headers: {
+
+                        'content-type': 'application/json'
+
+                    },
+                    body: JSON.stringify(currentUser)
+
+
+
+                })
+
+                    .then(res => res.json())
+                    .then(data => {
+
+                        console.log(data)
+                        localStorage.setItem('token', data.token)
+                        form.reset()
+                        setError('')
+                        toast.success('User created  successfully')
+
+                        updateProfileInfo(name, url)
+                            .then(() => { })
+                            .catch(error => {
+                                console.log(error)
+
+
+                            })
+                        navigate(from, { state: true })
 
                     })
+
+
+
+
+
+
+
+
 
 
 
