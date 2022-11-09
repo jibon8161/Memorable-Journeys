@@ -35,7 +35,7 @@ const Review = ({ servicedata }) => {
 
 
 
-        fetch('http://localhost:5000/review', {
+        fetch('https://memorable-journey-tourist-service-server.vercel.app/review', {
 
 
             method: 'POST',
@@ -67,7 +67,7 @@ const Review = ({ servicedata }) => {
     useEffect(() => {
 
 
-        fetch(`http://localhost:5000/review?serviceId=${servicedata._id}`)
+        fetch(`https://memorable-journey-tourist-service-server.vercel.app/review?serviceId=${servicedata._id}`)
             .then(res => res.json())
             .then(data => {
                 setReview(data)

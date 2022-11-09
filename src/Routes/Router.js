@@ -26,7 +26,7 @@ export const router = createBrowserRouter([
 
                 path: '/',
                 element: <Home></Home>,
-                loader: async () => fetch('http://localhost:5000/limitservices')
+                loader: async () => fetch('https://memorable-journey-tourist-service-server.vercel.app/limitservices')
 
             },
             {
@@ -57,14 +57,14 @@ export const router = createBrowserRouter([
 
                 path: '/update/:id',
                 element: <Update></Update>,
-                loader: async ({ params }) => fetch(`http://localhost:5000/update/${params.id}`)
+                loader: async ({ params }) => fetch(`https://memorable-journey-tourist-service-server.vercel.app/update/${params.id}`)
 
             },
             {
 
                 path: '/seeall',
                 element: <AllServices></AllServices>,
-                loader: async () => fetch('http://localhost:5000/seemoreservices')
+                loader: async () => fetch('https://memorable-journey-tourist-service-server.vercel.app/seemoreservices')
 
 
             },
@@ -72,7 +72,7 @@ export const router = createBrowserRouter([
 
                 path: '/details/:id',
                 element: <ViewDetails></ViewDetails>,
-                loader: async ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: async ({ params }) => fetch(`https://memorable-journey-tourist-service-server.vercel.app/services/${params.id}`)
 
             },
             {

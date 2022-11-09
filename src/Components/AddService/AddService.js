@@ -4,7 +4,7 @@ import useTitle from '../Hooks/useTitle';
 
 const AddService = () => {
 
-useTitle('Add service')
+    useTitle('Add service')
 
 
     const handleAddService = event => {
@@ -20,7 +20,7 @@ useTitle('Add service')
 
 
 
-        fetch('http://localhost:5000/seemoreservices', {
+        fetch('https://memorable-journey-tourist-service-server.vercel.app/seemoreservices', {
 
 
             method: 'POST',

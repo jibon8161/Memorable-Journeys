@@ -17,10 +17,10 @@ const Update = () => {
         event.preventDefault()
         const form = event.target
         const review = form.review.value;
-        const updateReview = {review}
-    
+        const updateReview = { review }
 
-        fetch(`http://localhost:5000/update/${updateData._id}`, {
+
+        fetch(`https://memorable-journey-tourist-service-server.vercel.app/update/${updateData._id}`, {
 
             method: 'PUT',
             headers: {

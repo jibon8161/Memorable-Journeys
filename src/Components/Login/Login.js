@@ -42,7 +42,7 @@ const Login = () => {
 
                 }
 
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://memorable-journey-tourist-service-server.vercel.app/jwt', {
 
 
                     method: "POST",
@@ -126,7 +126,7 @@ const Login = () => {
 
                 }
 
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://memorable-journey-tourist-service-server.vercel.app/jwt', {
 
 
                     method: "POST",

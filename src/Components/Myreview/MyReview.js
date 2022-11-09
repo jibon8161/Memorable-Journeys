@@ -9,12 +9,12 @@ const MyReview = () => {
 
     useTitle('My review')
     const [reviewByEmail, setallreviewByEmail] = useState([])
-    const { user,logOut } = useContext(InfoContext)
+    const { user, logOut } = useContext(InfoContext)
 
 
     useEffect(() => {
 
-        fetch(`http://localhost:5000/reviewbyemail?email=${user?.email}`, {
+        fetch(`https://memorable-journey-tourist-service-server.vercel.app/reviewbyemail?email=${user?.email}`, {
 
 
 
@@ -33,14 +33,14 @@ const MyReview = () => {
         })
             .then(res => {
 
-                if (res.status === 401 || res.status === 403){
+                if (res.status === 401 || res.status === 403) {
 
                     logOut()
 
 
                 }
 
-                    return res.json()
+                return res.json()
 
             })
             .then(data => {

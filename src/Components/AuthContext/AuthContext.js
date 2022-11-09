@@ -23,7 +23,7 @@ const AuthContext = ({ children }) => {
 
     //update profile info
     const updateProfileInfo = (name, url) => {
-        setLoader(true)
+        // setLoader(true)
         return updateProfile(auth.currentUser, {
             displayName: name, photoURL: url
 

@@ -41,7 +41,7 @@ const Signup = () => {
                 }
 
 
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://memorable-journey-tourist-service-server.vercel.app/jwt', {
 
 
                     method: "POST",
@@ -56,14 +56,15 @@ const Signup = () => {
 
                 })
 
+
                     .then(res => res.json())
                     .then(data => {
 
                         console.log(data)
                         localStorage.setItem('token', data.token)
+                        toast.success('User created  successfully')
                         form.reset()
                         setError('')
-                        toast.success('User created  successfully')
 
                         updateProfileInfo(name, url)
                             .then(() => { })
@@ -75,14 +76,6 @@ const Signup = () => {
                         navigate(from, { state: true })
 
                     })
-
-
-
-
-
-
-
-
 
 
 

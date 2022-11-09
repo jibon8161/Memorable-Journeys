@@ -17,7 +17,7 @@ const ReviewsByEmail = ({ allReview, reviewByEmail, setallreviewByEmail }) => {
         if (proceed) {
 
 
-            fetch(`http://localhost:5000/reviews/${id}`, {
+            fetch(`https://memorable-journey-tourist-service-server.vercel.app/reviews/${id}`, {
 
                 method: 'DELETE',
 
@@ -51,7 +51,7 @@ const ReviewsByEmail = ({ allReview, reviewByEmail, setallreviewByEmail }) => {
         <div>
 
             <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md divide-gray-700 dark:bg-gray-900 dark:text-gray-100 shadow-inner shadow-slate-800 mb-8">
-                            <h1 className="font-bold">Service name:{allReview.servicename}</h1>
+                <h1 className="font-bold">Service name:{allReview.servicename}</h1>
                 <div className="flex justify-between p-4">
                     <div className="flex space-x-4">
                         <div>
