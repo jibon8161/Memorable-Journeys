@@ -19,6 +19,9 @@ const ThreeService = ({ data }) => {
 
 
     return (
+
+        // .........................................service cards.....................................................
+
         <div>
             <div className="max-w-xs rounded-md shadow-2xl shadow-slate-900 dark:bg-gray-900 dark:text-gray-100 conotainer mx-auto">
 

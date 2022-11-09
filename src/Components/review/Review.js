@@ -51,6 +51,7 @@ const Review = ({ servicedata }) => {
             .then(data => {
                 console.log(data)
                 toast.success('review is added successfully')
+                form.reset()
 
                 setreFresh(!refresh)
 

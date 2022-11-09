@@ -29,6 +29,9 @@ const Home = () => {
         <div>
 
             <h1><span className='text-4xl text-orange-600 font-bold'> Memorable Journeys</span> <br /><span className='text-2xl font-semibold'> Your personal tour guide </span></h1>
+
+{/* ........................................................carousel............................................................ */}
+
             <div className="carousel w-full mt-2 container mx-auto h-[500px]">
                 <div id="slide1" className="carousel-item relative w-full">
                     <img src="https://images.unsplash.com/photo-1590603740183-980e7f6920eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80" className="w-full" alt='' />
@@ -61,6 +64,9 @@ const Home = () => {
             </div>
 
             <div className="divider"></div>
+
+{/* ................................................service cards with data limit 3................................................ */}
+
             <div className='mt-6 text-5xl font-medium underline '>
                 <h1>My service<span className='text-orange-600'>s</span></h1>
 
@@ -83,6 +89,8 @@ const Home = () => {
             <div className="divider"></div>
 
             <div>
+
+{/* ...............................................package section start from here................................................... */}
 
                 <section className="py-20 bg-white">
                     <div className="container px-4 mx-auto">
@@ -211,6 +219,7 @@ const Home = () => {
 
             <div>
 
+{/* .............................................about me section.................................................................. */}
 
                 <div className="hero lg:min-h-screen container mx-auto">
                     <div className="hero-content text-center">
@@ -231,13 +240,7 @@ const Home = () => {
 
             </div>
 
-
-
-
-
-
-
-
+{/* .......................................................stats section........................................................... */}
 
             <div className="divider"></div>
             <section className="p-6 my-6">
