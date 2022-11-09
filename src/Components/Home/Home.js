@@ -3,6 +3,7 @@ import { useLoaderData, useNavigate } from 'react-router-dom';
 import { InfoContext } from '../AuthContext/AuthContext';
 import useTitle from '../Hooks/useTitle';
 import ThreeService from '../ThreeService/ThreeService';
+import { FaDove, FaGrinHearts, FaRunning, FaHeart } from "react-icons/fa";
 
 const Home = () => {
 
@@ -117,7 +118,7 @@ const Home = () => {
                                             <span>Hotel Room</span>
                                         </li>
                                     </ul>
-                                 
+
                                 </div>
                             </div>
                             <div className="flex w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
@@ -155,7 +156,7 @@ const Home = () => {
                                             <span>return ticket</span>
                                         </li>
                                     </ul>
-                                    
+
                                 </div>
                             </div>
                             <div className="w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
@@ -192,9 +193,9 @@ const Home = () => {
                                             </svg>
                                             <span>Return tickets for three persons</span>
                                         </li>
-                                       
+
                                     </ul>
-                                  
+
                                 </div>
                             </div>
                         </div>
@@ -203,6 +204,47 @@ const Home = () => {
 
 
             </div>
+            <div className="divider"></div>
+            <section className="p-6 my-6 ">
+                <div className="container grid grid-cols-1 gap-6 mx-auto sm:grid-cols-2 xl:grid-cols-4">
+                    <div className="flex p-4 space-x-4 rounded-lg md:space-x-6 ">
+                        <div className="flex justify-center p-2 align-middle rounded-lg sm:p-4">
+                            <FaDove className='text-5xl'></FaDove>
+                        </div>
+                        <div className="flex flex-col justify-center align-middle">
+                            <p className="text-3xl font-semibold leading-none stat-value text-primary">100%</p>
+                            <p className="capitalize">success rate</p>
+                        </div>
+                    </div>
+                    <div className="flex p-4 space-x-4 rounded-lg md:space-x-6">
+                        <div className="flex justify-center p-2 align-middle rounded-lg sm:p-4">
+                            <FaGrinHearts className='text-5xl'></FaGrinHearts>
+                        </div>
+                        <div className="flex flex-col justify-center align-middle">
+                            <p className="text-3xl font-semibold leading-none stat-figure text-secondary">60%</p>
+                            <p className="capitalize">Repeat clients</p>
+                        </div>
+                    </div>
+                    <div className="flex p-4 space-x-4 rounded-lg md:space-x-6">
+                        <div className="flex justify-center p-2 align-middle rounded-lg sm:p-4 ">
+                            <FaRunning className='text-5xl'></FaRunning>
+                        </div>
+                        <div className="flex flex-col justify-center align-middle ">
+                            <p className="text-3xl font-semibold leading-none stat-figure text-warning">4000+</p>
+                            <p className="capitalize">travels</p>
+                        </div>
+                    </div>
+                    <div className="flex p-4 space-x-4 rounded-lg md:space-x-6 ">
+                        <div className="flex justify-center p-2 align-middle rounded-lg sm:p-4 ">
+                            <FaHeart className='text-5xl'></FaHeart>
+                        </div>
+                        <div className="flex flex-col justify-center align-middle">
+                            <p className="text-3xl font-semibold leading-none stat-figure text-accent">2M</p>
+                            <p className="capitalize">Followers In FaceBook</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
 
         </div>
