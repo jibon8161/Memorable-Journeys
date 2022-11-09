@@ -19,7 +19,7 @@ export const Header = () => {
     }
 
     return (
-        <div className="bg-gray-900">
+        <div className="bg-gray-900 sticky top-0 z-50 ">
             <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
                 <div className="relative flex items-center justify-between">
                     <div className="flex items-center">
@@ -161,7 +161,7 @@ export const Header = () => {
                             </svg>
                         </button>
                         {isMenuOpen && (
-                            <div className="absolute top-0 left-0 w-full">
+                            <div className="w-full">
                                 <div className="p-5 bg-white border rounded shadow-sm">
                                     <div className="flex items-center justify-between mb-4">
                                         <div>

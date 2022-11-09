@@ -4,6 +4,7 @@ import { InfoContext } from '../AuthContext/AuthContext';
 import useTitle from '../Hooks/useTitle';
 import ThreeService from '../ThreeService/ThreeService';
 import { FaDove, FaGrinHearts, FaRunning, FaHeart } from "react-icons/fa";
+import vidbg from '../Home/Waves - 70796.mp4'
 
 const Home = () => {
 
@@ -90,7 +91,7 @@ const Home = () => {
                             <h2 className="text-4xl font-bold lg:text-5xl">Choose your best package</h2>
                         </div>
                         <div className="flex flex-wrap items-stretch -mx-4">
-                            <div className="flex w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
+                            <div className="lg:flex w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
                                 <div className="flex flex-col p-6 space-y-6 rounded shadow-2xl sm:p-8 bg-orange-200">
                                     <div className="space-y-2">
                                         <h4 className="text-2xl font-bold">Single Person</h4>
@@ -121,7 +122,7 @@ const Home = () => {
 
                                 </div>
                             </div>
-                            <div className="flex w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
+                            <div className="lg:flex w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
                                 <div className="flex flex-col p-6 space-y-6 rounded shadow-2xl  bg-orange-200 sm:p-8">
                                     <div className="space-y-2">
                                         <h4 className="text-2xl font-bold">Couple</h4>
@@ -205,7 +206,41 @@ const Home = () => {
 
             </div>
             <div className="divider"></div>
-            <section className="p-6 my-6 ">
+
+
+
+            <div>
+
+               
+                <div className="hero lg:min-h-screen container mx-auto">
+                    <div className="hero-content text-center">
+                        <div className="lg:max-w-full">
+                            <h1 className="lg:text-1xl font-bold">About <span className='text-green-800'>me</span></h1>
+                            <h1 className="lg:text-2xl font-bold">I'M YOUR PERSONAL <span className='text-green-800'>TOUR GUIDE</span></h1>
+                            <h1 className="lg:text-5xl font-bold">DISCOVER BANGLADESH <span className='text-green-800'>WITH ME</span></h1>
+                            <p className="lg:py-6 lg:text-red-600 font-semibold lg:text-lg text-black lg:uppercase"> I am Energetic professional with 6 years of experience informing and guiding museum visitors. <br /> Superior talent for entertaining audience members and delivering a high level of customer service. <span className='lg:block hidden'>Extensive knowledge of history and visual arts; able to learn, retain, and recall extensive amounts of information quickly</span></p>
+
+                        </div>
+                    </div>
+
+                    <video src={vidbg} autoPlay loop muted></video>
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+            <div className="divider"></div>
+            <section className="p-6 my-6">
                 <div className="container grid grid-cols-1 gap-6 mx-auto sm:grid-cols-2 xl:grid-cols-4">
                     <div className="flex p-4 space-x-4 rounded-lg md:space-x-6 ">
                         <div className="flex justify-center p-2 align-middle rounded-lg sm:p-4">
@@ -240,7 +275,7 @@ const Home = () => {
                         </div>
                         <div className="flex flex-col justify-center align-middle">
                             <p className="text-3xl font-semibold leading-none stat-figure text-accent">2M</p>
-                            <p className="capitalize">Followers In FaceBook</p>
+                            <p className="capitalize">Followers</p>
                         </div>
                     </div>
                 </div>
