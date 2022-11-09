@@ -62,7 +62,7 @@ const MyReview = () => {
 
             <div className='mx-auto lg:mt-[12.5%] lg:mb-[10%] text-5xl font-semibold'>
                 {
-                    reviewByEmail.length === 0 && <h1>No reviews were added</h1>
+                    reviewByEmail.length === 0 && <h1 className='lg:mt-0 mt-32'>No reviews were added</h1>
 
                 }
             </div>

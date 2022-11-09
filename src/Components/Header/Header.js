@@ -161,9 +161,9 @@ export const Header = () => {
                             </svg>
                         </button>
                         {isMenuOpen && (
-                            <div className="w-full">
+                            <div className="absolute top-0 left-0 w-full">
                                 <div className="p-5 bg-white border rounded shadow-sm">
-                                    <div className="flex items-center justify-between mb-4">
+                                    <div className="flex items-center justify-between mb-4 sticky top-0 z-50">
                                         <div>
                                             <NavLink
                                                 to="/"
@@ -187,7 +187,7 @@ export const Header = () => {
                                                     <rect x="14" y="11" width="7" height="12" />
                                                 </svg>
                                                 <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                                                    Company
+                                                    Memorable Journeys
                                                 </span>
                                             </NavLink>
                                         </div>
@@ -216,59 +216,87 @@ export const Header = () => {
                                                     title="Our product"
                                                     className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                                                 >
-                                                    Product
+                                                    Home
                                                 </NavLink>
                                             </li>
+                                            
+                                                {
+
+                                                    user && user?.uid && <>
+
+
+                                                        <li>
+                                                            <NavLink
+                                                                to="/myreview"
+                                                                aria-label="Our product"
+                                                                title="Our product"
+                                                                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                                                            >
+                                                                My review
+                                                            </NavLink>
+                                                        </li>
+                                                        <li>
+                                                            <NavLink
+                                                                to="/addservice"
+                                                                aria-label="Product pricing"
+                                                                title="Product pricing"
+                                                                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                                                            >
+                                                                Add service
+                                                            </NavLink>
+                                                        </li>
+
+                                                    </>
+
+
+
+
+
+
+
+                                                }
+                                            
                                             <li>
                                                 <NavLink
-                                                    to="/"
-                                                    aria-label="Our product"
-                                                    title="Our product"
-                                                    className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                                                >
-                                                    Features
-                                                </NavLink>
-                                            </li>
-                                            <li>
-                                                <NavLink
-                                                    to="/"
+                                                    to="/blog"
                                                     aria-label="Product pricing"
                                                     title="Product pricing"
                                                     className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                                                 >
-                                                    Pricing
+                                                    Blog
                                                 </NavLink>
                                             </li>
-                                            <li>
-                                                <NavLink
-                                                    to="/"
-                                                    aria-label="About us"
-                                                    title="About us"
-                                                    className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                                                >
-                                                    About us
-                                                </NavLink>
-                                            </li>
-                                            <li>
-                                                <NavLink
-                                                    to="/"
-                                                    aria-label="Sign in"
-                                                    title="Sign in"
-                                                    className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                                                >
-                                                    Sign in
-                                                </NavLink>
-                                            </li>
-                                            <li>
-                                                <NavLink
-                                                    to="/"
-                                                    className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                                                    aria-label="Sign up"
-                                                    title="Sign up"
-                                                >
-                                                    Sign up
-                                                </NavLink>
-                                            </li>
+
+
+                                            {user && user?.uid ? <button onClick={SignOut} className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-black transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none">LogOut</button>
+                                                :
+
+                                                <>
+
+                                                    <li>
+                                                        <NavLink
+                                                            to="/login"
+                                                            aria-label="Sign in"
+                                                            title="Sign in"
+                                                            className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-black transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                                                        >
+                                                            Sign in
+                                                        </NavLink>
+                                                    </li>
+                                                    <li>
+                                                        <NavLink
+                                                            to="/signup"
+                                                            className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-black transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                                                            aria-label="Sign up"
+                                                            title="Sign up"
+                                                        >
+                                                            Sign up
+                                                        </NavLink>
+                                                    </li>
+                                                </>
+
+
+                                            }
                                         </ul>
                                     </nav>
                                 </div>
