@@ -42,4 +42,3 @@ Memorable Journey is mobile-ready,user Friendly and also very secure.
 - I use JWT token for review section so no can see your personal information.
 - It has a Blog Section, here you can find most commonly ask questions.
 - This site has  Private routes for better security...
-- 
