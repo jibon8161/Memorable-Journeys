@@ -64,7 +64,7 @@ export const router = createBrowserRouter([
 
                 path: '/seeall',
                 element: <AllServices></AllServices>,
-                loader: async () => fetch('https://memorable-journey-tourist-service-server.vercel.app/seemoreservices')
+             
 
 
             },

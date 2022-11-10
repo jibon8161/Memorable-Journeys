@@ -103,7 +103,8 @@ const AuthContext = ({ children }) => {
         forgetPass,
         googleSignIn,
         logOut,
-        loader
+        loader,
+        setLoader
 
 
     }
