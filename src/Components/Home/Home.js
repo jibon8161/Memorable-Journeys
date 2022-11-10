@@ -269,7 +269,7 @@ const Home = () => {
                         </div>
                         <div className="flex flex-col justify-center align-middle ">
                             <p className="text-3xl font-semibold leading-none stat-figure text-warning">4000+</p>
-                            <p className="capitalize">travels</p>
+                            <p className="capitalize">tours</p>
                         </div>
                     </div>
                     <div className="flex p-4 space-x-4 rounded-lg md:space-x-6 ">

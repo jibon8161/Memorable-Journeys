@@ -39,6 +39,6 @@ Memorable Journey is mobile-ready,user Friendly and also very secure.
 - you can also add  reviews about your recent tours.
 - You can  delete or update your review from this website.
 - you get two different login options here (1)Login with email and password (2) Google
-- I use JWT token for review section so no can see your personal information.
+- I use JWT token for review section so no one can see your personal information.
 - It has a Blog Section, here you can find most commonly ask questions.
 - This site has  Private routes for better security...
