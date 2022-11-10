@@ -28,6 +28,7 @@ const Login = () => {
     const handleLogin = (event) => {
 
         event.preventDefault()
+        setLoader(true)
         const form = event.target
         const email = form.email.value
         const password = form.pass.value
@@ -36,7 +37,6 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
-                setLoader(true)
 
                 const currentUser = {
 

@@ -19,6 +19,7 @@ const Signup = () => {
     const handleSignup = event => {
 
         event.preventDefault()
+        setLoader(true)
         const form = event.target
         const name = form.name.value
         const url = form.url.value
@@ -66,7 +67,7 @@ const Signup = () => {
                         toast.success('User created  successfully')
                         form.reset()
                         setError('')
-                        setLoader(true)
+                    
 
                         updateProfileInfo(name, url)
                             .then(() => { })
