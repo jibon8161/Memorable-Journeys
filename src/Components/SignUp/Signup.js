@@ -19,7 +19,7 @@ const Signup = () => {
     const handleSignup = event => {
 
         event.preventDefault()
-        setLoader(true)
+
         const form = event.target
         const name = form.name.value
         const url = form.url.value
@@ -33,7 +33,7 @@ const Signup = () => {
 
                 const user = result.user;
                 console.log(user)
-
+                setLoader(true)
 
                 const currentUser = {
 
@@ -67,7 +67,7 @@ const Signup = () => {
                         toast.success('User created  successfully')
                         form.reset()
                         setError('')
-                    
+
 
                         updateProfileInfo(name, url)
                             .then(() => { })
