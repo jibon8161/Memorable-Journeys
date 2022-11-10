@@ -22,7 +22,7 @@ const AllServiceData = ({ alldata }) => {
             <div className="max-w-xs rounded-md shadow-2xl shadow-slate-700 dark:bg-gray-900 dark:text-gray-100 conotainer mx-auto mb-4">
                 <PhotoProvider>
                     <PhotoView src={urlimg}>
-                        <img src={urlimg} alt="" className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500 " />
+                        <img src={urlimg} alt="" className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500 shadow-2xl shadow-slate-800 " />
                     </PhotoView>
                 </PhotoProvider>
                 <div className="flex flex-col justify-between p-6 space-y-8">

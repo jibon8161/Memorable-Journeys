@@ -27,7 +27,7 @@ const ThreeService = ({ data }) => {
 
                 <PhotoProvider>
                     <PhotoView src={urlimg}>
-                        <img src={urlimg} alt="" className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500 " />
+                        <img src={urlimg} alt="" className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500  shadow-2xl shadow-slate-800" />
                     </PhotoView>
                 </PhotoProvider>
 

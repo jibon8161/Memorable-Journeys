@@ -32,7 +32,7 @@ const Home = () => {
 
 {/* ........................................................carousel............................................................ */}
 
-            <div className="carousel w-full mt-2 container mx-auto h-[500px]">
+            <div className="carousel w-full mt-2 container mx-auto h-[500px] shadow-2xl shadow-slate-800">
                 <div id="slide1" className="carousel-item relative w-full">
                     <img src="https://images.unsplash.com/photo-1590603740183-980e7f6920eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80" className="w-full" alt='' />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -221,7 +221,7 @@ const Home = () => {
 
 {/* .............................................about me section.................................................................. */}
 
-                <div className="hero lg:min-h-screen container mx-auto">
+                <div className="hero lg:min-h-screen container mx-auto shadow-2xl shadow-slate-800">
                     <div className="hero-content text-center">
                         <div className="lg:max-w-full">
                             <h1 className="lg:text-1xl font-bold">About <span className='text-green-800'>me</span></h1>

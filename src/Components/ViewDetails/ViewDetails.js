@@ -18,7 +18,7 @@ const ViewDetails = () => {
                 <div className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
                     <div className="w-full bg-gray-300 bg-center bg-cover rounded-lg shadow-md" >
 
-                        <img className='w-full' src={urlimg} alt="" />
+                        <img className='w-full shadow-2xl shadow-slate-800' src={urlimg} alt="" />
 
                     </div>
 
