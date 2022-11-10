@@ -5,7 +5,7 @@ import { InfoContext } from '../AuthContext/AuthContext';
 import DisplayReview from '../DisplayReview/DisplayReview';
 
 const Review = ({ servicedata }) => {
-
+    const [loader, setLoader] = useState(true)
     const { user } = useContext(InfoContext)
     const [review, setReview] = useState([])
     const [refresh, setreFresh] = useState(true)
@@ -72,6 +72,7 @@ const Review = ({ servicedata }) => {
             .then(res => res.json())
             .then(data => {
                 setReview(data)
+                setLoader(false)
 
             }
 
@@ -93,13 +94,21 @@ const Review = ({ servicedata }) => {
 
                 <h1 className='text-4xl font-semibold text-orange-600'> All reviews from happy Travelers </h1>
 
-                <div>
-                    {
+                {
 
-                        review?.map(allReview => <DisplayReview key={allReview._id} allReview={allReview}></DisplayReview>)
+                    loader ? <div className="w-32 h-32 border-4 border-dashed rounded-full animate-spin mx-auto mt-32 mb-32 border-red-600"></div> :
 
-                    }
-                </div>
+
+                        <div>
+                            {
+
+                                review?.map(allReview => <DisplayReview key={allReview._id} allReview={allReview}></DisplayReview>)
+
+                            }
+                        </div>
+
+
+                }
 
 
             </div>

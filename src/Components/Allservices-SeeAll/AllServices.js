@@ -33,7 +33,7 @@ const AllServices = () => {
     return (
         <div>
             <div className='mt-6 text-5xl  font-medium '>
-                <h1> All Services<span className='text-orange-600'>s</span></h1>
+                <h1> All Service<span className='text-orange-600'>s</span></h1>
             </div>
             {
                 loader ? <div className="w-32 h-32 border-4 border-dashed rounded-full animate-spin mx-auto mt-32 mb-32 border-red-600"></div> :
