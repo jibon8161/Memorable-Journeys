@@ -33,18 +33,18 @@ const Login = () => {
         const password = form.pass.value
         console.log(email, password)
         signInWithEmail(email, password)
-        .then(result => {
-            const user = result.user;
-            console.log(user)
-            
-            const currentUser = {
-                
-                email: user.email
-                
-                
-            }
-            
-           
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+                setLoader(true)
+                const currentUser = {
+
+                    email: user.email
+
+
+                }
+
+
                 fetch('https://memorable-journey-tourist-service-server.vercel.app/jwt', {
 
 
@@ -71,9 +71,8 @@ const Login = () => {
                         form.reset()
                         setError('')
 
-                        setLoader(true)
-
                         navigate(from, { state: true })
+
 
                     })
 
