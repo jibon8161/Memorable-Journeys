@@ -33,7 +33,7 @@ const Signup = () => {
 
                 const user = result.user;
                 console.log(user)
-                setLoader(true)
+
 
                 const currentUser = {
 
@@ -67,7 +67,7 @@ const Signup = () => {
                         toast.success('User created  successfully')
                         form.reset()
                         setError('')
-
+                        setLoader(true)
 
                         updateProfileInfo(name, url)
                             .then(() => { })
