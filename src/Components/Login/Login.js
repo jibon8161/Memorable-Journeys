@@ -119,7 +119,7 @@ const Login = () => {
 
                 const user = result.user;
                 console.log(user)
-
+                setLoader(true)
 
                 const currentUser = {
 
